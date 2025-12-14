@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:17
+    container_name: bookapi-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: a3920410
+      POSTGRES_DB: appdb
+      TZ: Asia/Tokyo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./alembic:/alembic
+  api:
+    build: ./app
+    container_name: bookapi-api
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:a3920410@db:5432/appdb"
+    volumes:
+      - ./app:/app
+volumes:
+  pgdata:
