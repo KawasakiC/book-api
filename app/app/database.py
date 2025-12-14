@@ -22,7 +22,7 @@ import os
  例:
  postgresql://ユーザー名:パスワード@ホスト:ポート/DB名
 """
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:a3920410@db:5432/appdb")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@db:5432/appdb")
 
 """
  SQLAlchemy エンジンの生成

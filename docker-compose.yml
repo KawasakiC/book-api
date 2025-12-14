@@ -4,7 +4,7 @@ services:
     container_name: bookapi-db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: a3920410
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: appdb
       TZ: Asia/Tokyo
     ports:
@@ -20,7 +20,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: "postgresql://postgres:a3920410@db:5432/appdb"
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/appdb"
     volumes:
       - ./app:/app
 volumes:
