@@ -181,7 +181,7 @@ curl -X DELETE "http://localhost:8000/books/<書籍ID>"
 
 
 ## 作成者
-川崎　せりか
+KawasakiC
 
 
 ---
